@@ -28,26 +28,40 @@ int main() {
     }
 
     int m = 0;
+    int sum = 0;
+    int max = 0;
 
     for(int m = 0 ; m <= size -3 ; m++){
         for(int n = 0 ; n <= size-3 ; n++){
+            
             int temp[3][3];
+
             for(int i = m ; i < m + 3 ; i++){
                 for(int j = n ; j < n + 3 ; j++){
                     // cout<<Arr[i][j]<<"\t";
                     temp[i][j] = Arr[m + i][n + j];
                 }
             }
+
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     cout << temp[i][j] << "\t";
                 }
                 cout << endl;
             }
-            cout << "-----------------\n";
+
+            for(int p = 0 ; p < 3 ; p++){
+                sum = 0;
+                for(int q = 0 ; q < 3 ; q++){
+                    sum = sum + temp[p][q];
+                }
+                sum = max;
+            }
+
+            cout<<"The maximum sum among  the chunk of array is:"<<sum;
+        
         }
     }
-
     return 0;
 }
 
